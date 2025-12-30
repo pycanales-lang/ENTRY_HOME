@@ -5,313 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENTRY HOME - Competencia</title>
     <style>
-        /* RESET SIMPLE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            padding: 15px;
-            color: #333;
-        }
-        
-        /* CONTENEDOR PRINCIPAL */
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* ENCABEZADO */
-        .header {
-            background: #2563eb;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .badge {
-            background: #fbbf24;
-            color: #1e3a8a;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        h1 {
-            font-size: 26px;
-            margin: 10px 0 5px 0;
-        }
-        
-        .subtitle {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        /* TABLA */
-        .table-container {
-            padding: 20px;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        
-        th {
-            background: #e0f2fe;
-            padding: 12px 10px;
-            text-align: left;
-            font-size: 13px;
-            color: #1e3a8a;
-            border-bottom: 2px solid #ddd;
-        }
-        
-        td {
-            padding: 12px 10px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .count {
-            font-weight: bold;
-            font-size: 18px;
-            color: #1e3a8a;
-        }
-        
-        .prize-name {
-            font-weight: bold;
-            color: #222;
-        }
-        
-        .prize-desc {
-            font-size: 12px;
-            color: #666;
-            margin-top: 3px;
-        }
-        
-        .qty {
-            font-weight: bold;
-            font-size: 18px;
-            color: #059669;
-            text-align: center;
-        }
-        
-        /* CRITERIOS */
-        .criteria {
-            background: #f8fafc;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .criteria h2 {
-            color: #1e3a8a;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-        
-        .criteria ul {
-            padding-left: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .criteria li {
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        
-        .tiebreaker {
-            background: #fffbeb;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #fde68a;
-            margin-top: 15px;
-        }
-        
-        .tiebreaker h3 {
-            color: #d97706;
-            margin-bottom: 10px;
-            font-size: 15px;
-        }
-        
-        .tiebreaker ol {
-            padding-left: 20px;
-            font-size: 14px;
-        }
-        
-        .tiebreaker li {
-            margin-bottom: 5px;
-        }
-        
-        .note {
-            font-size: 12px;
-            color: #888;
-            font-style: italic;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #ddd;
-        }
-        
-        /* BOTÓN WHATSAPP */
-        .whatsapp-btn {
-            display: block;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            text-align: center;
-            padding: 16px;
-            margin: 20px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: background 0.3s;
-        }
-        
-        .whatsapp-btn:hover {
-            background: #128C7E;
-        }
-        
-        /* FOOTER */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 12px;
-            color: #888;
-            border-top: 1px solid #eee;
-        }
-        
-        /* RESPONSIVE */
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                border-radius: 12px;
-            }
-            
-            .header {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 22px;
-            }
-            
-            th, td {
-                padding: 10px 8px;
-                font-size: 14px;
-            }
-            
-            .count, .qty {
-                font-size: 16px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; padding: 15px; color: #333; }
+        .container { max-width: 400px; margin: 0 auto; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .header { background: #2563eb; color: white; padding: 20px; text-align: center; }
+        .badge { background: #fbbf24; color: #1e3a8a; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        h1 { font-size: 26px; margin: 10px 0 5px 0; }
+        .subtitle { font-size: 14px; opacity: 0.9; }
+        .table-container { padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { background: #e0f2fe; padding: 12px 10px; text-align: left; font-size: 13px; color: #1e3a8a; border-bottom: 2px solid #ddd; }
+        td { padding: 12px 10px; border-bottom: 1px solid #eee; }
+        .count { font-weight: bold; font-size: 18px; color: #1e3a8a; }
+        .prize-name { font-weight: bold; color: #222; }
+        .prize-desc { font-size: 12px; color: #666; margin-top: 3px; }
+        .qty { font-weight: bold; font-size: 18px; color: #059669; text-align: center; }
+        .criteria { background: #f8fafc; margin: 20px; padding: 20px; border-radius: 10px; border-left: 4px solid #3b82f6; }
+        .criteria h2 { color: #1e3a8a; margin-bottom: 15px; font-size: 18px; }
+        .criteria ul { padding-left: 20px; margin-bottom: 20px; }
+        .criteria li { margin-bottom: 8px; font-size: 14px; }
+        .tiebreaker { background: #fffbeb; padding: 15px; border-radius: 8px; border: 1px solid #fde68a; margin-top: 15px; }
+        .tiebreaker h3 { color: #d97706; margin-bottom: 10px; font-size: 15px; }
+        .tiebreaker ol { padding-left: 20px; font-size: 14px; }
+        .note { font-size: 12px; color: #888; font-style: italic; margin-top: 10px; padding-top: 10px; border-top: 1px dashed #ddd; }
+        .whatsapp-btn { display: block; background: #25D366; color: white; text-decoration: none; text-align: center; padding: 16px; margin: 20px; border-radius: 10px; font-weight: bold; font-size: 16px; }
+        .footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #eee; }
     </style>
 </head>
 <body>
-
 <div class="container">
-    
-    <!-- ENCABEZADO -->
     <div class="header">
         <div class="badge">COMPETENCIA COMERCIAL</div>
         <h1>ENTRY HOME</h1>
         <div class="subtitle">Competencia Interna para Asesores</div>
     </div>
-    
-    <!-- TABLA DE PREMIOS -->
     <div class="table-container">
         <table>
             <thead>
-                <tr>
-                    <th>Cant. Ganadores</th>
-                    <th>Premio Asesores</th>
-                    <th>QTY</th>
-                </tr>
+                <tr><th>Cant. Ganadores</th><th>Premio Asesores</th><th>QTY</th></tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="count">12</td>
-                    <td>
-                        <div class="prize-name">Speaker JBL GO 4</div>
-                        <div class="prize-desc">JBL 7</div>
-                    </td>
-                    <td class="qty">7</td>
-                </tr>
-                <tr>
-                    <td class="count">8</td>
-                    <td>
-                        <div class="prize-name">Mochila Tigo</div>
-                        <div class="prize-desc">tigo 6</div>
-                    </td>
-                    <td class="qty">6</td>
-                </tr>
-                <tr>
-                    <td class="count">16</td>
-                    <td>
-                        <div class="prize-name">Vale Super Gs. 200.000</div>
-                        <div class="prize-desc">Gs. 200.000 SUPER</div>
-                    </td>
-                    <td class="qty">5</td>
-                </tr>
-                <tr>
-                    <td class="count">16</td>
-                    <td>
-                        <div class="prize-name">Botella Happy BUBBA</div>
-                        <div class="prize-desc">Azul</div>
-                    </td>
-                    <td class="qty">4</td>
-                </tr>
+                <tr><td class="count">12</td><td><div class="prize-name">Speaker JBL GO 4</div><div class="prize-desc">JBL 7</div></td><td class="qty">7</td></tr>
+                <tr><td class="count">8</td><td><div class="prize-name">Mochila Tigo</div><div class="prize-desc">tigo 6</div></td><td class="qty">6</td></tr>
+                <tr><td class="count">16</td><td><div class="prize-name">Vale Super Gs. 200.000</div><div class="prize-desc">Gs. 200.000 SUPER</div></td><td class="qty">5</td></tr>
+                <tr><td class="count">16</td><td><div class="prize-name">Botella Happy BUBBA</div><div class="prize-desc">Azul</div></td><td class="qty">4</td></tr>
             </tbody>
         </table>
     </div>
-    
-    <!-- CRITERIOS -->
     <div class="criteria">
         <h2>📌 CRITERIOS</h2>
         <ul>
             <li>Generadas desde 01 al 10 de enero</li>
             <li>Instaladas hasta el 15 de enero</li>
-            <li>Cada premio tiene una cantidad de ganadores</li>
         </ul>
-        
         <div class="tiebreaker">
-            <h3>⚖️ En caso de empate se tomarán dos condiciones:</h3>
+            <h3>⚖️ Desempate:</h3>
             <ol>
-                <li>Mayor cantidad de generadas del 01 al 10 de enero</li>
+                <li>Mayor cantidad de generadas</li>
                 <li>Mayor cantidad de pospago</li>
             </ol>
             <div class="note">(No incluyen las QT canceladas)</div>
         </div>
     </div>
-    
-    <!-- BOTÓN WHATSAPP -->
-    <a href="https://wa.me/595982604264?text=Hola%2C%20tengo%20consultas%20sobre%20la%20competencia%20ENTRY%20HOME" 
-       class="whatsapp-btn" 
-       target="_blank">
-        📱 Consultas por WhatsApp
-    </a>
-    
-    <!-- FOOTER -->
-    <div class="footer">
-        © 2025 – CANALES | Uso interno exclusivo
-    </div>
-    
+    <a href="wa.me" class="whatsapp-btn">📱 Consultas por WhatsApp</a>
+    <div class="footer">© 2025 – CANALES | Uso interno exclusivo</div>
 </div>
-
 </body>
 </html>
