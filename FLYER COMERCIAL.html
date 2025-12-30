@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<title> </title> <!-- título vacío para que no se muestre -->
+<!-- IMPORTANTE: título vacío para que no aparezca arriba -->
+<title></title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -14,32 +15,31 @@
 
 body{
     margin:0;
-    padding:12px;
-    font-family:Arial, sans-serif;
+    padding:14px;
+    font-family:Arial, Helvetica, sans-serif;
     background:linear-gradient(135deg,#003366,#0055a5);
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* CONTENEDOR */
 .container{
-    max-width:420px;          /* clave para móvil */
     width:100%;
+    max-width:420px;
     margin:auto;
-    background:#fff;
-    border-radius:16px;
+    background:#ffffff;
+    border-radius:18px;
     padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
 /* CABECERA */
 .header{
     text-align:center;
-    margin-bottom:16px;
 }
 
 .badge{
     display:inline-block;
     background:#ffcc00;
-    padding:6px 14px;
+    padding:6px 16px;
     border-radius:20px;
     font-size:12px;
     font-weight:bold;
@@ -47,7 +47,7 @@ body{
 
 h1{
     font-size:22px;
-    margin:10px 0 5px;
+    margin:12px 0 6px;
     color:#003366;
 }
 
@@ -56,14 +56,14 @@ h1{
     color:#666;
 }
 
-/* TABLA */
+/* TABLA PREMIOS */
 .table{
-    margin-top:20px;
+    margin-top:22px;
 }
 
 .row{
     display:grid;
-    grid-template-columns:50px 1fr 40px;
+    grid-template-columns:48px 1fr 40px;
     align-items:center;
     padding:12px 0;
     border-bottom:1px solid #eee;
@@ -82,6 +82,10 @@ h1{
     font-weight:bold;
 }
 
+.prize{
+    font-size:14px;
+}
+
 .qty{
     text-align:right;
     font-weight:bold;
@@ -91,10 +95,20 @@ h1{
 /* CRITERIOS */
 .box{
     background:#f4f7fb;
-    border-radius:12px;
+    border-radius:14px;
     padding:14px;
-    margin-top:20px;
+    margin-top:22px;
     font-size:13px;
+}
+
+.box strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+.box ul{
+    margin:6px 0 12px 18px;
+    padding:0;
 }
 
 /* BOTÓN WHATSAPP */
@@ -102,26 +116,32 @@ h1{
     margin-top:22px;
     display:block;
     text-align:center;
-    padding:14px;
+    padding:15px;
     background:linear-gradient(135deg,#25D366,#128C7E);
     color:#fff;
     text-decoration:none;
     font-weight:bold;
-    border-radius:12px;
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(37,211,102,.45);
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.03);
 }
 
 /* FOOTER */
 .footer{
-    margin-top:16px;
+    margin-top:18px;
     text-align:center;
     font-size:11px;
     color:#aaa;
 }
 
-/* AJUSTE EXTRA PARA CELULARES CHICOS */
+/* AJUSTE PARA CELULARES MUY CHICOS */
 @media (max-width:360px){
     h1{ font-size:20px; }
-    .row{ grid-template-columns:46px 1fr 36px; }
+    .row{ grid-template-columns:44px 1fr 36px; }
 }
 </style>
 </head>
@@ -139,25 +159,25 @@ h1{
     <div class="table">
         <div class="row">
             <div class="circle">12</div>
-            <div>🎵 Speaker JBL GO 4</div>
+            <div class="prize">🎵 Speaker JBL GO 4</div>
             <div class="qty">7</div>
         </div>
 
         <div class="row">
             <div class="circle">8</div>
-            <div>🎒 Mochila Tigo</div>
+            <div class="prize">🎒 Mochila Tigo</div>
             <div class="qty">6</div>
         </div>
 
         <div class="row">
             <div class="circle">16</div>
-            <div>🛒 Vale Super Gs. 200.000</div>
+            <div class="prize">🛒 Vale Super Gs. 200.000</div>
             <div class="qty">5</div>
         </div>
 
         <div class="row">
             <div class="circle">16</div>
-            <div>💧 Botella Hoppy BUBBA Azul</div>
+            <div class="prize">💧 Botella Hoppy BUBBA Azul</div>
             <div class="qty">4</div>
         </div>
     </div>
@@ -167,6 +187,7 @@ h1{
         <ul>
             <li>Generadas del 01 al 10 de enero</li>
             <li>Instaladas hasta el 15 de enero</li>
+            <li>Cada premio tiene cantidad definida</li>
         </ul>
 
         <strong>⚖️ En caso de empate</strong>
@@ -177,9 +198,9 @@ h1{
     </div>
 
     <a class="whatsapp"
-       href="https://wa.me/595982604264?text=Hola%2C%20tengo%20consultas%20sobre%20ENTRY%20HOME"
+       href="https://wa.me/595982604264?text=Hola%2C%20tengo%20consultas%20sobre%20la%20competencia%20ENTRY%20HOME"
        target="_blank">
-       📲 Consultas por WhatsApp
+        📲 Consultas por WhatsApp
     </a>
 
     <div class="footer">
