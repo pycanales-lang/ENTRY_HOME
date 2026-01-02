@@ -1,255 +1,275 @@
 <!DOCTYPE html>
 <html lang="es">
-<head> 
-    <meta charset="UTF-8">
-    <title>ENTRY HOME | Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8QS0FFX4MB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-8QS0FFX4MB');
+</script>
 
-    <style>
-        :root {
-            --primary: #003366;
-            --accent: #ffcc00;
-            --success: #10b981;
-            --text-main: #1e293b;
-            --text-light: #64748b;
-        }
+<meta charset="UTF-8">
+<title>ENTRY HOME | Competencia Comercial 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
-            background: radial-gradient(circle at top right, #1e3a8a, #0f172a);
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-            color: var(--text-main);
-            /* Seguridad */
-            -webkit-user-select: none; user-select: none;
-        }
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        margin: 0;
+        padding: 20px;
+        -webkit-user-select: none;
+        user-select: none;
+    }
 
-        /* Contenedor Principal Estilo Glass */
-        .container {
-            max-width: 440px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(10px);
-            padding: 35px 25px;
-            border-radius: 30px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
+    .container {
+        max-width: 500px;
+        background: #ffffff;
+        margin: auto;
+        padding: 28px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+        position: relative;
+        overflow: hidden;
+    }
 
-        /* Decoración de fondo */
-        .circle-deco {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 100px;
-            height: 100px;
-            background: var(--accent);
-            filter: blur(40px);
-            opacity: 0.3;
-            z-index: 0;
-        }
+    /* BARRA DE TIEMPO ESTILO PRO */
+    .timer-section {
+        background: #f1f5f9;
+        border-radius: 12px;
+        padding: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+        border: 1px solid #e2e8f0;
+    }
 
-        .header {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-bottom: 30px;
-        }
+    .timer-title {
+        font-size: 11px;
+        font-weight: bold;
+        color: #1e3a8a;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
 
-        .badge {
-            background: #fff9db;
-            color: #856404;
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-weight: 800;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border: 1px solid var(--accent);
-            display: inline-block;
-            margin-bottom: 10px;
-        }
+    .progress-container {
+        background: #e2e8f0;
+        border-radius: 10px;
+        height: 10px;
+        overflow: hidden;
+        margin: 5px 0 10px 0;
+    }
 
-        h1 {
-            color: var(--primary);
-            margin: 0;
-            font-size: 34px;
-            font-weight: 900;
-            letter-spacing: -1px;
-        }
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, #2563eb, #10b981);
+        width: 0%;
+        transition: width 1s ease;
+    }
 
-        /* Tabla de Premios Estilizada */
-        .prize-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 12px;
-            margin-bottom: 20px;
-        }
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
 
-        .prize-table th {
-            text-align: left;
-            padding: 0 10px;
-            color: var(--text-light);
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .count-item { font-size: 16px; font-weight: bold; color: #1e3a8a; }
+    .count-label { font-size: 9px; color: #64748b; display: block; text-transform: uppercase; }
 
-        .prize-row td {
-            background: #fdfdfd;
-            padding: 15px 10px;
-            border-top: 1px solid #f1f5f9;
-            border-bottom: 1px solid #f1f5f9;
-            transition: transform 0.2s;
-        }
+    /* Marca de agua */
+    .watermark {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%) rotate(-30deg);
+        font-size: 40px;
+        color: rgba(0,0,0,0.05);
+        white-space: nowrap;
+        pointer-events: none;
+    }
 
-        .prize-row td:first-child { border-left: 1px solid #f1f5f9; border-top-left-radius: 15px; border-bottom-left-radius: 15px; }
-        .prize-row td:last-child { border-right: 1px solid #f1f5f9; border-top-right-radius: 15px; border-bottom-right-radius: 15px; }
+    h1 {
+        color: #1e3a8a;
+        margin-top: 0;
+        font-size: 28px;
+        text-align: center;
+    }
 
-        .prize-row:hover td {
-            background: #f8fafc;
-            transform: translateY(-2px);
-        }
+    .tag {
+        display: block;
+        background: #fbbf24;
+        color: #1e3a8a;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 13px;
+        margin: 0 auto 15px auto;
+        width: fit-content;
+        text-align: center;
+    }
 
-        .count {
-            font-weight: 800;
-            color: #2563eb;
-            font-size: 18px;
-            padding-left: 15px !important;
-        }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+    }
 
-        .prize-name { font-weight: 700; color: #334155; font-size: 14px; margin: 0; }
-        .prize-brand { font-size: 10px; color: var(--text-light); text-transform: uppercase; font-weight: 600; }
+    th {
+        background: #f1f5f9;
+        color: #1e3a8a;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #cbd5e1;
+    }
 
-        .qty {
-            text-align: center;
-            font-weight: 800;
-            color: var(--success);
-            background: #ecfdf5;
-            padding: 5px 10px !important;
-            border-radius: 10px;
-            font-size: 14px;
-        }
+    td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
 
-        /* Cuadro de Información */
-        .info-card {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 20px;
-            margin-top: 25px;
-            border: 1px dashed #cbd5e1;
-        }
+    .count-badge { font-weight: bold; color: #2563eb; font-size: 16px; }
+    .qty-badge { font-weight: bold; color: #059669; text-align: center; display: block; }
+    .prize-title { font-weight: bold; color: #334155; }
+    .prize-sub { font-size: 11px; color: #64748b; }
 
-        .info-card h2 {
-            font-size: 15px;
-            color: var(--primary);
-            margin: 0 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .criterios-box {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 8px;
+        border-left: 4px solid #fbbf24;
+        margin-top: 20px;
+    }
 
-        .info-card ul, .info-card ol {
-            margin: 0;
-            padding-left: 18px;
-            font-size: 13px;
-            color: #475569;
-            line-height: 1.7;
-        }
+    .criterios-box h2 { font-size: 16px; color: #1e3a8a; margin-top: 0; }
+    ul, ol { padding-left: 20px; font-size: 13px; line-height: 1.5; color: #334155; }
 
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 10px;
-            color: #94a3b8;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .emoji-medal { font-size: 1.2em; vertical-align: middle; }
-    </style>
+    .footer {
+        margin-top: 25px;
+        font-size: 11px;
+        color: #94a3b8;
+        text-align: center;
+    }
+</style>
 </head>
 <body>
-
+  
 <div class="container">
-    <div class="circle-deco"></div>
+    <div class="watermark">USO INTERNO • CANALES</div>
 
-    <div class="header">
-        <span class="badge">COMPETENCIA ASESORES TIENDAS</span>
-        <h1>ENTRY HOME</h1>
-        <p style="font-size: 13px; color: var(--text-light); margin-top: 5px;">Lista de Premios</p>
+    <span class="tag">COMPETENCIA ENERO 2026</span>
+
+    <h1>ENTRY HOME</h1>
+
+    <div class="timer-section">
+        <div id="timer-status" class="timer-title">Cargando competencia...</div>
+        <div class="progress-container">
+            <div id="p-bar" class="progress-bar"></div>
+        </div>
+        <div class="countdown">
+            <div class="count-item"><span id="days">00</span><span class="count-label">Días</span></div>
+            <div class="count-item"><span id="hours">00</span><span class="count-label">Horas</span></div>
+            <div class="count-item"><span id="mins">00</span><span class="count-label">Min</span></div>
+        </div>
     </div>
 
-    <table class="prize-table">
+    <table>
         <thead>
             <tr>
-                <th>Cant. Ganadores</th>
-                <th>Premio Asesores</th>
-                <th style="text-align: center;">Qty</th>
+                <th>Ganadores</th>
+                <th>Premio</th>
+                <th>QTY</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="prize-row">
-                <td class="count">🥇 12</td>
-                <td>
-                    <p class="prize-name">Speaker GO 4</p>
-                    <span class="prize-brand">JBL Premium Audio</span>
-                </td>
-                <td><span class="qty">7</span></td>
+            <tr>
+                <td class="count-badge">12</td>
+                <td><div class="prize-title">Speaker GO 4</div><div class="prize-sub">JBL</div></td>
+                <td class="qty-badge">7</td>
             </tr>
-            <tr class="prize-row">
-                <td class="count">🥈 08</td>
-                <td>
-                    <p class="prize-name">Mochila Tigo</p>
-                    <span class="prize-brand">Edición Especial</span>
-                </td>
-                <td><span class="qty">6</span></td>
+            <tr>
+                <td class="count-badge">8</td>
+                <td><div class="prize-title">Mochila Tigo</div><div class="prize-sub">Tigo</div></td>
+                <td class="qty-badge">6</td>
             </tr>
-            <tr class="prize-row">
-                <td class="count">🥉 16</td>
-                <td>
-                    <p class="prize-name">Vale Supermercado</p>
-                    <span class="prize-brand">Gs. 200.000 Canjeable</span>
-                </td>
-                <td><span class="qty">5</span></td>
+            <tr>
+                <td class="count-badge">16</td>
+                <td><div class="prize-title">Vale Super Gs. 200.000</div><div class="prize-sub">Supermercados</div></td>
+                <td class="qty-badge">5</td>
             </tr>
-            <tr class="prize-row">
-                <td class="count">🏅 16</td>
-                <td>
-                    <p class="prize-name">Hoppy Azul</p>
-                    <span class="prize-brand">Marca BUBBA Original</span>
-                </td>
-                <td><span class="qty">4</span></td>
+            <tr>
+                <td class="count-badge">16</td>
+                <td><div class="prize-title">Hoppy Azul</div><div class="prize-sub">BUBBA</div></td>
+                <td class="qty-badge">4</td>
             </tr>
         </tbody>
     </table>
 
-    <div class="info-card">
+    <div class="criterios-box">
         <h2>📌 Criterios de Calificación</h2>
         <ul>
-            <li><b>Generadas:</b> 01 al 14 de Enero 2025.</li>
-            <li><b>Instaladas:</b> Hasta el 17 de Enero 2025.</li>
+            <li>Generadas: 01 al 14 de Enero 2026.</li>
+            <li>Instaladas: hasta el 17 de Enero 2026.</li>
             <li>Cada premio tiene una cantidad de ganadores.</li>
         </ul>
-        
-        <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 15px 0;">
-        
-        <h2>⚖️ Desempate</h2>
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 10px 0;">
+        <h2 style="font-size: 14px;">⚖️ En caso de empate:</h2>
         <ol>
-            <li>Mayor cantidad de generadas del 01 al 14 de enero. (No incluyen las OT canceladas).</li>
-            <li>Mayor cantidad de pospago.</li>
+            <li>Mayor cantidad de generadas (01-14 Ene 2026).</li>
+            <li>Mayor cantidad de Pospago.</li>
         </ol>
     </div>
 
     <div class="footer">
-        © 2025 – CANALES | DOCUMENTO DE USO INTERNO CONFIDENCIAL
+        © 2026 – CANALES | Información de uso exclusivo interno
     </div>
 </div>
+
+<script>
+    // CONFIGURACIÓN DE FECHAS ENERO 2026
+    const startDate = new Date('2026-01-01T00:00:00').getTime();
+    const endDate = new Date('2026-01-14T23:59:59').getTime();
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        const totalDuration = endDate - startDate;
+        const pBar = document.getElementById('p-bar');
+        const statusText = document.getElementById('timer-status');
+        
+        if (now < startDate) {
+            statusText.innerText = "LA COMPETENCIA INICIA EN:";
+            showTime(startDate - now);
+            pBar.style.width = "0%";
+        } else if (now > endDate) {
+            statusText.innerText = "COMPETENCIA FINALIZADA";
+            pBar.style.width = "100%";
+            pBar.style.background = "#ef4444";
+            document.getElementById('days').innerText = "00";
+            document.getElementById('hours').innerText = "00";
+            document.getElementById('mins').innerText = "00";
+        } else {
+            statusText.innerText = "TIEMPO PARA EL CIERRE:";
+            const remaining = endDate - now;
+            const progress = ((now - startDate) / totalDuration) * 100;
+            pBar.style.width = progress + "%";
+            
+            // Color rojo si quedan menos de 3 días
+            if (remaining < (3 * 24 * 60 * 60 * 1000)) {
+                pBar.style.background = "#ef4444";
+                statusText.style.color = "#ef4444";
+            }
+            showTime(remaining);
+        }
+    }
+
+    function showTime(ms) {
+        document.getElementById('days').innerText = Math.floor(ms / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+        document.getElementById('hours').innerText = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+        document.getElementById('mins').innerText = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    // Seguridad: Bloquear clic derecho
+    document.addEventListener('contextmenu', e => e.preventDefault());
+</script>
 
 </body>
 </html>
